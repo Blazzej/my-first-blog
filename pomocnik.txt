@@ -1,0 +1,30 @@
+tworzenie środowiska: python -m venv nazwa
+
+uruchomienie środowiska: nazwa\Scripts\activate
+
+tworzenie bazy danych: python manage.py migrate
+
+uruchamianie serwera:
+python manage.py runserver
+http://127.0.0.1:8000/
+
+
+Właściwości modelu:
+
+class Post(models.Model):
+    author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
+    text = models.TextField()
+    created_date = models.DateTimeField(
+            default=timezone.now)
+    published_date = models.DateTimeField(
+            blank=True, null=True)
+
+models.CharField - tak definiujemy tekst z ograniczoną liczbą znaków.
+models.TextField - a to nadaje się do dłuższych tekstów bez ograniczeń w ilości znaków. Dla treści wpisu będzie idealne, prawda?
+models.DateTimeField - to jest data i godzina.
+models.ForeignKey - to jest odnośnik do innego modelu.
+
+Tworzenie tabeli dla modeli w bazie danych:
+python manage.py makemigrations nazwa_pliku
+python manage.py migrate nazwa_pliku
