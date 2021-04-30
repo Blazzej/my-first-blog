@@ -32,7 +32,9 @@ python manage.py migrate nazwa_pliku
 Akutualizacje
 git status
 git add --all .
+git status	
 git commit -m "My Django app, first commit"
+git push
 
 panywhere
 cd ~/<nazwapythonanywhere>.pythonanywhere.com
