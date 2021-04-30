@@ -37,5 +37,5 @@ git commit -m "My Django app, first commit"
 git push
 
 panywhere
-cd ~/<nazwapythonanywhere>.pythonanywhere.com
+cd ~/<nazwapythonanywhere>.pythonanywhere.com 	cd ~/blazej.pythonanywhere.com
 git pull
