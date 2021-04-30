@@ -28,3 +28,12 @@ models.ForeignKey - to jest odnośnik do innego modelu.
 Tworzenie tabeli dla modeli w bazie danych:
 python manage.py makemigrations nazwa_pliku
 python manage.py migrate nazwa_pliku
+
+Akutualizacje
+git status
+git add --all .
+git commit -m "My Django app, first commit"
+
+panywhere
+cd ~/<nazwapythonanywhere>.pythonanywhere.com
+git pull
