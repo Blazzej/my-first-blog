@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>DISS NA FILIPA</title>
-</head>
-<body>
+<div>
+    <h1><a href="">Django</a></h1>
+</div>
 
-<h1>Diss na Filipa</h1>
-<p>Zostałeś zniszczony....</p>
-<a href="https://www.youtube.com/watch?v=AP9kDSZj4gY&t=1s", target="_blank">Łatwo</a>
-
-
-</body>
-</html>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <p>author: {{ post.author }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+	<br/>
+{% endfor %}
