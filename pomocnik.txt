@@ -33,7 +33,7 @@ Akutualizacje
 git status
 git add --all .
 git status	
-git commit -m "My Django app, first commit"
+git commit -m "cos"
 git push
 
 panywhere
