@@ -39,3 +39,44 @@ git push
 panywhere
 cd ~/<nazwapythonanywhere>.pythonanywhere.com 	cd ~/blazej.pythonanywhere.com
 git pull
+
+pliki statyczne
+workon <your-pythonanywhere-domain>.pythonanywhere.com
+python manage.py collectstatic
+
+mysite/settings.py
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'blog',
+]
+
+blog/admin.py
+from django.contrib import admin
+from .models import Post
+
+admin.site.register(Post)
+
+python manage.py createsuperuser
+
+mysite/urls.py
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('blog.urls')),
+]
+
+
+blog/urls.py
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.post_list, name='post_list'),
+]
